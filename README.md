@@ -1,0 +1,2 @@
+# MySqlForMyself
+My MySQL journey!
