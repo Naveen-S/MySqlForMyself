@@ -67,3 +67,32 @@ My MySQL journey!
         col_name data_type NOT NULL,
         PRIMARY KEY (id)
         );
+        
+#### READ 
+    - SELECT * FROM table_name;
+    
+    SIDENOTE: The order in which columns is based on how to defined the table if you use '*' for select.
+                But if you use comma seperated col_name then it follows that order.
+    
+#### READ only specific things OR WHERE clause
+    - SELECT * FROM table_name 
+        WHERE condition;
+    
+    SIDENOTE: Its case-insensitive search.
+    
+
+#### UPDATE
+    - UPDATE table_name SET colname = value WHERE colname = value;
+
+#### Delete
+    - DELETE FROM table_name WHERE col_name = value;
+    
+    SIDENOTE: 
+        DROP TABLE table_name;   ---> Dropping the table, table doesn't exist anymore.
+        DELETE TABLE table_name; ---> Deleting all the entries in the table, table still exists.
+
+#### Extras 
+
+    ###### AS
+        SELECT cat_id AS id FROM table_name;
+        
