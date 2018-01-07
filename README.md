@@ -127,6 +127,51 @@ My MySQL journey!
     SELECT UPPER(title) FROM books;
     SELECT LOWER(title) FROM books;
     
+#### DISTINCT
+    
+    SELECT DISTINCT colname FROM table;
+    
+    SIDENOTE: If you want distinct of combination of two or more things
+    
+    SELECT DISTINCT col1, col2 FROM table;
+    
+#### ORDER BY
+    
+    SELECT colname FROM table ORDER BY colname;
+    
+    Variations:
+        SELECT author_fname, author_lname, title  FROM books ORDER BY 2;  // same as saying order by author_lname
+        
+        SELECT * FROM books ORDER BY author_lname, author_fname;  // Orders by author_lname if there is conflict its resolved by ordering those by author_fname.
+        
+#### LIMIT 
+    
+    SELECT * FROM table LIMIT 5;
+    
+    SELECT * FROM table LIMIT start_row, noOfRows;  // Row starts from 0.
+    
+    SIDENOTE: string counting starts from 1. (Its confusing I know ) 
+    
+    
+ #### LIKE
+ 
+    SELECT * FROM table WHERE title LIKE "%the%"; 
+    % - wildcard 0 or n occurance of any character.
+    
+    %the% --> title which has "the" in it anywhere.
+    %the  --> title ending with "the".
+    the%  --> title starting with "the"._    
+    SELECT * FROM table WHERE stock LIKE "____"; // Where stock is 4 digits more than or equal to 1000.
+    _  - wildcard to match exactly one character
+    
+    SIDENOTE: Ok how do I match % and  _ if they are special character?
+    Fuss not missy, \ (backslash) to your rescue.
+    
+    SELECT * FROM books WHERE title LIKE "%\%%"; // Search for book with title of one % in it.
+    SELECT * FROM books WHERE title LIKE "%\_%"; // Search for book with title of one _ in it.
+    
+    
+    
     
     
 #### Extras 
