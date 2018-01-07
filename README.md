@@ -91,6 +91,44 @@ My MySQL journey!
         DROP TABLE table_name;   ---> Dropping the table, table doesn't exist anymore.
         DELETE TABLE table_name; ---> Deleting all the entries in the table, table still exists.
 
+
+## String functions
+  
+  #### CONCAT 
+    - Use to concat n number of column's data and any separator.
+    
+    SELECT CONCAT( col1, seperator ,col2, col3, ...., coln) FROM table_name; 
+
+  #### CONCAT_WS
+    - Concat with a common separator
+    
+    SELECT CONCAT_WS(" - ", title, lastname, firstname) FROM books;
+    
+  #### SUBSTRING or SUBSTR
+        SELECT SUBSTRING( string, startIndex, endIndex );
+        
+        SIDENOTE: index starts with 1 in sql.
+  
+ #### REPLACE
+ 
+        SELECT REPLACE( string, partOfTheString, toBeReplacedWith );
+        
+ #### REVERSE
+    
+        SELECT REVERSE(string);
+        
+        ex: SELECT REVERSE(title) FROM books;
+ 
+#### CHAR_LENGTH
+    SELECT author, CHARLENGTH(author) FROM books;
+
+#### UPPER and LOWER
+    
+    SELECT UPPER(title) FROM books;
+    SELECT LOWER(title) FROM books;
+    
+    
+    
 #### Extras 
 
     ###### AS
