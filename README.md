@@ -84,7 +84,7 @@ My MySQL journey!
 #### UPDATE
     - UPDATE table_name SET colname = value WHERE colname = value;
 
-#### Delete
+#### DELETE
     - DELETE FROM table_name WHERE col_name = value;
     
     SIDENOTE: 
@@ -127,6 +127,9 @@ My MySQL journey!
     SELECT UPPER(title) FROM books;
     SELECT LOWER(title) FROM books;
     
+    
+## Refining Selection    
+
 #### DISTINCT
     
     SELECT DISTINCT colname FROM table;
