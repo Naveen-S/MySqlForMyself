@@ -173,7 +173,14 @@ My MySQL journey!
     SELECT * FROM books WHERE title LIKE "%\%%"; // Search for book with title of one % in it.
     SELECT * FROM books WHERE title LIKE "%\_%"; // Search for book with title of one _ in it.
     
+ 
+ ## Aggregate functions
+ 
+ #### COUNT
+    SELECT COUNT(*) FROM table;
     
+    In conjunction with other functions
+        SELECT COUNT(DISTINCT(author_lname, author_fname)) FROM books;
     
     
     
