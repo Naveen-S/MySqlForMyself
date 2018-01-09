@@ -195,7 +195,8 @@ My MySQL journey!
     SELECT MIN(colname) FROM table;
     
    *SIDENOTE: Potential problem*
-            `SELECT MAX(pages), title FROM books; // ERRR doesn't give right title which has maximum number of pages.`
+   
+            SELECT MAX(pages), title FROM books; // ERRR doesn't give right title which has maximum number of pages.
             
             SOLUTION:
                 
@@ -207,9 +208,17 @@ My MySQL journey!
                 
 #### MIN and MAX with GROUPBY
     
-    SELECT author_fname, author_lname, MAX(released_year) FROM books GROUP BY released_year;
+    SELECT author_fname, author_lname, MAX(released_year) FROM books GROUP BY author_lname, author_fname;
     
+#### SUM
     
+    SELECT author_fname, author_lname, SUM(pages) FROM books GROUP BY author_lname, author_fname;
+    
+#### AVG
+    
+    SELECT author_fname, author_lname, AVG(pages) FROM books GROUP BY author_lname, author_fname;
+    
+
 
 #### Extras 
 
