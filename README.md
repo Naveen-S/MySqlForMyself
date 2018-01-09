@@ -194,8 +194,8 @@ My MySQL journey!
     SELECT MAX(colname) FROM table;
     SELECT MIN(colname) FROM table;
     
-   SIDENOTE: Potential problem
-            SELECT MAX(pages), title FROM books; // ERRR doesn't give right title which has maximum number of pages.
+   *SIDENOTE: Potential problem*
+            `SELECT MAX(pages), title FROM books; // ERRR doesn't give right title which has maximum number of pages.`
             
             SOLUTION:
                 
