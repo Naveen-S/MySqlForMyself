@@ -182,8 +182,35 @@ My MySQL journey!
     In conjunction with other functions
         SELECT COUNT(DISTINCT(author_lname, author_fname)) FROM books;
     
+ #### GROUP BY
+    
+    SELECT * FROM table GROUP BY colname; // Doesn't give any useful info, each row is a super row with only preview displayed.
+    
+    SELECT colname, COUNT(*) FROM table GROUP BY colname;
     
     
+ #### MIN and MAX
+    
+    SELECT MAX(colname) FROM table;
+    SELECT MIN(colname) FROM table;
+    
+   SIDENOTE: Potential problem
+            SELECT MAX(pages), title FROM books; // ERRR doesn't give right title which has maximum number of pages.
+            
+            SOLUTION:
+                
+                // Subquery approch (time consuming)
+                SELECT * FROM books WHERE pages = (SELECT MAX(pages) FROM books);
+                
+                //Normal query
+                SELECT * FROM books ORDER BY pages DESC limit 1;
+                
+#### MIN and MAX with GROUPBY
+    
+    SELECT author_fname, author_lname, MAX(released_year) FROM books GROUP BY released_year;
+    
+    
+
 #### Extras 
 
     ###### AS
