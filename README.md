@@ -219,6 +219,34 @@ My MySQL journey!
     SELECT author_fname, author_lname, AVG(pages) FROM books GROUP BY author_lname, author_fname;
     
 
+## Data types in depth!
+
+#### CHAR and VARCHAR
+    
+    CHAR - Takes up fixed length (fixed number of bytes), if given input is less than the specified length it pads the input with spaces, if input length is more than it truncate to the specified length.
+    You can specify length anywhere between 0-255.
+    
+    SIDENOTE: When retrieved to display data padding is removed.
+    
+    VARCHAR - No of bytes occupied depends on user input but it does truncate when input length exceeds the specified length.
+    
+    CHAR are faster than VARCHAR.
+    
+#### DECIMAL
+
+    Syntax
+        DECIMAL(5,2) : 5 digit allowed in which 2 are after decimal.
+        ex: 234.89
+        
+        If huge value is specified it converts it into maximum allowed value.
+        Ex: 
+        DECIMAL(6,2)
+        Input value     Stored value
+        67367388        9999.99
+        1               1.00
+        123.9999        124.00
+        
+        
 
 #### Extras 
 
