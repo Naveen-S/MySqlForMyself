@@ -246,8 +246,34 @@ My MySQL journey!
         1               1.00
         123.9999        124.00
         
-        
+#### DOUBLE and FLOAT
+    
+    FLOAT   : precision is ~7  -> greater than this, number gets fucked.
+    DOUBLE  : precision is ~15 -> greater than this, number gets fucked. 
 
+#### DATE, TIME and DATETIME
+    
+    DATE gives you date in YYYY MM DD format.
+    TIME gives yoy time in HH MM SS format.
+    DATETIME is the mix of both.
+    
+    CURDATE()   : gives DATE
+    CURTIME()   : gives TIME
+    NOW()       : gives DATETIME
+    
+#### Date formatting
+    
+    Can to used on DATE and DATETIME:
+    DAY() gives the day. (too fancy :P)
+    DAYNAME() gives the name of the day ( monday, tuesday,...)
+    DAYOFWEEK() gives the number (sunday:1, monday:2 ... )
+    DAYOFYEAR() gives the day count of the year.
+    
+    DATE_FORMAT(date, specifiers);
+    
+    specifiers - https://dev.mysql.com/doc/refman/5.5/en/date-and-time-functions.html#function_date-format
+    
+    
 #### Extras 
 
     ###### AS
