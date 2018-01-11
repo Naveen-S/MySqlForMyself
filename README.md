@@ -263,7 +263,7 @@ My MySQL journey!
     
 #### Date formatting
     
-    Can to used on DATE and DATETIME:
+    Can be used on DATE and DATETIME:
     DAY() gives the day. (too fancy :P)
     DAYNAME() gives the name of the day ( monday, tuesday,...)
     DAYOFWEEK() gives the number (sunday:1, monday:2 ... )
@@ -272,6 +272,26 @@ My MySQL journey!
     DATE_FORMAT(date, specifiers);
     
     specifiers - https://dev.mysql.com/doc/refman/5.5/en/date-and-time-functions.html#function_date-format
+    
+    
+#### DATE MATH
+    
+    DATEDIFF    : To find difference between two dates. 
+    syntax: 
+            SELECT DATEDIFF( NOW(), birthday ) FROM people;
+      
+    DATE_ADD    : Add date (how can I explain ? :P)
+    syntax: 
+            SELECT DATE_ADD( birthday, INTERVAL 1 UNITS ) FROM people;
+            
+            units: https://dev.mysql.com/doc/refman/5.5/en/date-and-time-functions.html#function_date-add
+            
+    Shorthand for above (+/-): 
+            
+            SELECT birthdate + INTERVAL UNITS FROM people;
+            
+            Ex:
+            SELECT birthdate + INTERVAL 1 YEAR + INTERVAL 10 HOUR FROM people;
     
     
 #### Extras 
