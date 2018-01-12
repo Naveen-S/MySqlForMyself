@@ -292,6 +292,15 @@ My MySQL journey!
             
             Ex:
             SELECT birthdate + INTERVAL 1 YEAR + INTERVAL 10 HOUR FROM people;
+  
+  
+##### TIMESTAMP
+    
+    TIMESTAMP: stores both date and time information.
+    
+    Diff between DATETIME and TIMESTAMP:
+        
+      
     
     
 #### Extras 
