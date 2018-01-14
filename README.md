@@ -412,3 +412,36 @@ My MySQL journey!
             birthdt BETWEEN CAST('1980-01-01' AS DATETIME)
             AND CAST('2000-01-01' AS DATETIME);
             
+            
+  ##### IN and NOT IN
+        
+        // Works for both string and integers.
+        
+        SELECT * FROM books
+        WHERE author_lname IN ("Carver", "Harris", "Lahiri");
+        
+        SELECT title, released_year FROM books  
+        WHERE released_year IN (2017, 1985);
+ 
+        
+        SELECT * FROM books
+        WHERE author_lname NOT IN ("Carver", "Harris", "Lahiri");
+        
+        
+  ##### CASE
+        
+        syntax:
+            CASE
+                WHEN x condition y THEN something
+                WHEN x condition p THEN otherthing
+                ELSE athing
+            END AS alias
+            
+            
+            SELECT title, stock_quantity,
+            CASE 
+                WHEN stock_quantity <= 50 THEN '*'
+                WHEN stock_quantity <= 100 THEN '**'
+                ELSE '***'
+            END AS STOCK
+            FROM books; 
