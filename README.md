@@ -300,10 +300,10 @@ My MySQL journey!
     
     Diff between DATETIME and TIMESTAMP:
     
-    DATETIME -  Ranges 1000-01-01 to 9999-01-01
+    DATETIME -  Ranges 1000-01-01 to 9999-12-31
                 Storage space 8 bytes
     
-    TIMESTAMP - 1970-01-01 to 2038- -        
+    TIMESTAMP - 1970-01-01 to 2038-01-19        
                 4 bytes
                 
     ex:
@@ -312,10 +312,51 @@ My MySQL journey!
             created_at TIMESTAMP DEFAULT NOW() ON UPDATE CURRENT_TIMESTAMP
         );
         
-    
-    
-#### Extras 
-
-    ###### AS
-        SELECT cat_id AS id FROM table_name;
+ 
+ ## Logical operators
+ 
+ ##### Not equal
         
+        =!
+        
+        SELECT * FROM books WHERE author_lname != "Harris";
+        
+ ##### NOT LIKE
+        
+        SELECT title FROM books WHERE title NOT LIKE 'W%';
+ 
+ ##### Greater than
+        >
+        SELECT * FROM books WHERE released_by > 2000;
+        
+##### Greater than equal to
+        >=
+        SELECT * FROM books WHERE released_by >= 2000;
+        
+SIDENOTE: 
+SELECT 99 > 1; // output : 1
+ 
+SELECT 99 > 567; // output : 0
+ 
+100 > 5
+-- true
+ 
+-15 > 15
+-- false
+ 
+9 > -10
+-- true
+ 
+1 > 1
+-- false
+ 
+'a' > 'b'
+-- false
+ 
+'A' > 'a'
+-- false
+ 
+'A' >=  'a'
+-- true
+
+
