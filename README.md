@@ -332,31 +332,32 @@ My MySQL journey!
 ##### Greater than equal to
         >=
         SELECT * FROM books WHERE released_by >= 2000;
-        
-SIDENOTE: 
-SELECT 99 > 1; // output : 1
- 
-SELECT 99 > 567; // output : 0
- 
-100 > 5
--- true
- 
--15 > 15
--- false
- 
-9 > -10
--- true
- 
-1 > 1
--- false
- 
-'a' > 'b'
--- false
- 
-'A' > 'a'
--- false
- 
-'A' >=  'a'
--- true
+
+   SIDENOTE: 
+   
+    SELECT 99 > 1; // output : 1
+
+    SELECT 99 > 567; // output : 0
+
+    100 > 5
+    -- true
+
+    -15 > 15
+    -- false
+
+    9 > -10
+    -- true
+
+    1 > 1
+    -- false
+
+    'a' > 'b'
+    -- false
+
+    'A' > 'a'
+    -- false
+
+    'A' >=  'a'
+    -- true
 
 
