@@ -360,4 +360,55 @@ My MySQL journey!
     'A' >=  'a'
     -- true
 
+##### Less than
+        <
+        SELECT title, released_year FROM books
+        WHERE released_year < 2000;
 
+##### Less than or equal to 
+        <=
+        SELECT title, released_year FROM books
+        WHERE released_year <= 2000;
+ 
+##### Logical AND / &&
+    
+    SELECT * FROM books
+    WHERE author_lname='Eggers' 
+    AND released_year > 2010 
+    AND title LIKE '%novel%';
+    
+
+##### Logical OR / ||
+    
+    SELECT * FROM books
+    WHERE author_lname = "Eggers" 
+    OR released_year > 2010;
+    
+##### BETWEEN and NOT BETWEEN
+    
+    syntax :    BETWEEN x AND y
+    
+    SELECT title, released_year FROM books 
+    WHERE released_year BETWEEN 2004 AND 2015;
+    
+    syntax : NOT BETWEEN x AND y
+    
+    SELECT title, released_year FROM books 
+    WHERE released_year NOT BETWEEN 2004 AND 2015;
+    
+    
+ SIDENOTE: CAST
+         
+         When using BETWEEN operator to compare two dates its better to use CAST operator before. To cast them to same type before doing any comparison.
+         
+         syntax: 
+            CAST ("1970-01-01" AS DATETIME);
+            
+            ex:
+            
+            SELECT name, birthdt 
+            FROM people
+            WHERE 
+            birthdt BETWEEN CAST('1980-01-01' AS DATETIME)
+            AND CAST('2000-01-01' AS DATETIME);
+            
