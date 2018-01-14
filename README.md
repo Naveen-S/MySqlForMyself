@@ -299,8 +299,19 @@ My MySQL journey!
     TIMESTAMP: stores both date and time information.
     
     Diff between DATETIME and TIMESTAMP:
+    
+    DATETIME -  Ranges 1000-01-01 to 9999-01-01
+                Storage space 8 bytes
+    
+    TIMESTAMP - 1970-01-01 to 2038- -        
+                4 bytes
+                
+    ex:
+        CREATE TABLE comment (
+            content VARCHAR(100),
+            created_at TIMESTAMP DEFAULT NOW() ON UPDATE CURRENT_TIMESTAMP
+        );
         
-      
     
     
 #### Extras 
