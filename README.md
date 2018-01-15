@@ -506,7 +506,71 @@ My MySQL journey!
         Returns m (no of rows in customers)  * n (no of rows in orders) rows.
    
    
+  ##### IMPLICIT INNER JOIN
+        
+        Gives the intersection of two tables with matching id's.
+        
+        SELECT * FROM customers, orders 
+        WHERE customers.id = orders.customer_id;
   
+  
+  ##### EXPLICIT INNER JOIN
+        
+        SELECT * FROM customers
+        JOIN orders
+            ON customers.id = orders.customer_id;
+  
+  
+        SELECT * FROM customers
+        INNER JOIN orders
+            ON customers.id = orders.customer_id;
+   
+   
+   ##### LEFT JOIN
+        
+        Returns data of left table irrespective of the match or not not the right table. Columns of right table for non-matched row is filled with NULL's.
+        
+        SELECT * FROM customers
+        LEFT JOIN orders
+            ON customers.id = orders.customer_id;
+            
+            
+       Example illustrating joined tables are regular tables on which you can perform all the basic operations like aggregate function and other thing we learnt:
+            
+            SELECT first_name, last_name,
+                IFNULL(SUM(amount), 0) AS total_spent
+            FROM customers
+            LEFT JOIN orders
+                ON customers.id = orders.customer_id
+            GROUP BY customers. id
+            ORDER BY total_spent;
+        
+     
+ ##### RIGHT JOIN
+        
+        SELECT * FROM customers
+        RIGHT JOIN orders
+            ON customers.id = orders.customer_id;
+     
+     
+ ##### CASCADE
+        
+        Ok imagine you want to delete a customer from the customer table then what happens to all his orders?
+        By the mysql doesn't let to delete the customer in that case. So how to get around this predicament,
+        we want the all the orders of the customer to be deleted in case we delete of a customer.
+        To achieve this we use something called cascade.
+        
+            CREATE TABLE orders(
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            order_date DATE,
+            amount DECIMAL(8,2),
+            customer_id INT,
+            FOREIGN KEY(customer_id) 
+            REFERENCES customers(id)
+            ON DELETE CASCADE
+);
+     
+     
  #### Extras 
  
    ###### AS
