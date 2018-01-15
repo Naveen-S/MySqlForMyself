@@ -446,7 +446,7 @@ My MySQL journey!
             END AS STOCK
             FROM books; 
   
-  ##### Relationships
+  ## Relationships
     
     DATA we'll be working with.
         
@@ -497,7 +497,15 @@ My MySQL journey!
         - look at the schema defination for the example.
         
         
-  
+ ### JOINS
+ 
+   #####  CROSS JOIN
+        
+        SELECT * FROM customers, orders;
+        
+        Returns m (no of rows in customers)  * n (no of rows in orders) rows.
+   
+   
   
  #### Extras 
  
