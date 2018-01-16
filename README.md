@@ -445,6 +445,17 @@ My MySQL journey!
                 ELSE '***'
             END AS STOCK
             FROM books; 
+            
+  ##### IF
+        syntax: 
+            IF( condition, something, somethingElse)
+            
+            If condition is true something is return else somethingElse is return.
+            (Just like ternary operator)
+            
+            EX: 
+                IF(Count(rating) > 0, 'ACTIVE', 'INACTIVE') AS STATUS 
+            
   
   ## Relationships
     
@@ -570,8 +581,43 @@ My MySQL journey!
             ON DELETE CASCADE
 );
      
-     
+   
+##### MANY:MANY
+    
+    When a row in table is related to mutiple row in the other table.
+    
+    ex:  
+    books and authors
+        A book can be written by mutiple authors and a author can write multiple books.
+    
+    students and classes
+        A student can attend multiple classes and a class contains multiple students.
+      
+      
+      
+  ##### Multiple tables Join.
+        SELECT title, rating, 
+        CONCAT(first_name, " " ,last_name) AS name
+        FROM series
+        JOIN reviews
+            ON series.id = reviews.series_id
+        JOIN reviewers
+            ON reviewers.id = reviews.reviewer_id
+        ORDER BY series_id;
+  
+        
  #### Extras 
  
    ###### AS
          SELECT cat_id AS id FROM table_name;
+         
+   ##### ROUND
+        
+        Rounds off to specified decimal places.
+        
+        SELECT genre, 
+        Round(Avg(rating), 2) AS avg_rating 
+        FROM   series 
+        INNER JOIN reviews 
+               ON series.id = reviews.series_id 
+        GROUP  BY genre; 
