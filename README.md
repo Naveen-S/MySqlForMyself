@@ -621,3 +621,13 @@ My MySQL journey!
         INNER JOIN reviews 
                ON series.id = reviews.series_id 
         GROUP  BY genre; 
+
+   ##### HAVING
+            If you want to get result of group by and then perform some action.
+            
+            EX:
+                SELECT username, count(*) AS hearts FROM users
+                JOIN likes  
+                    ON users.id = likes.user_id
+                GROUP BY user_id
+                HAVING hearts = (SELECT COUNT(*) FROM photos);
