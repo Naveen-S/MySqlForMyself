@@ -655,29 +655,12 @@ All my code: https://ide.cs50.io/naveentejas/naveen
    SIGNAL SQLSTATE = "45000" : represents the user defined error.
    
    SET MESSAGE_TEXT: is to set the error message to be displayed to user.
-        
- #### Extras 
  
-   ###### AS
-         SELECT cat_id AS id FROM table_name;
-         
-   ##### ROUND
+ 
+ ##### Managaing triggers
         
-        Rounds off to specified decimal places.
+        SHOW triggers;
+        // shows the list of triggers in the database.
         
-        SELECT genre, 
-        Round(Avg(rating), 2) AS avg_rating 
-        FROM   series 
-        INNER JOIN reviews 
-               ON series.id = reviews.series_id 
-        GROUP  BY genre; 
-
-   ##### HAVING
-            If you want to get result of group by and then perform some action.
-            
-            EX:
-                SELECT username, count(*) AS hearts FROM users
-                JOIN likes  
-                    ON users.id = likes.user_id
-                GROUP BY user_id
-                HAVING hearts = (SELECT COUNT(*) FROM photos);
+        DROP TRIGGER trigger_name;
+        // drop a trigger from the database.
