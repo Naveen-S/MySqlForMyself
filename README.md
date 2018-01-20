@@ -643,7 +643,7 @@ All my code: https://ide.cs50.io/naveentejas/naveen
             THEN 
                 SIGNAL SQLSTATE "45000"
                     SET MESSAGE_TEXT = "Cannot follow yourself"
-            ELSE IF;
+            END IF;
         END;
      
      $$
