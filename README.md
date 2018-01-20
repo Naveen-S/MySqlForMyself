@@ -143,9 +143,12 @@ My MySQL journey!
     SELECT colname FROM table ORDER BY colname;
     
     Variations:
-        SELECT author_fname, author_lname, title  FROM books ORDER BY 2;  // same as saying order by author_lname
+        SELECT author_fname, author_lname, title  FROM books ORDER BY 2;  
+        // same as saying order by author_lname
         
-        SELECT * FROM books ORDER BY author_lname, author_fname;  // Orders by author_lname if there is conflict its resolved by ordering those by author_fname.
+        SELECT * FROM books ORDER BY author_lname, author_fname;  
+        // Orders by author_lname if there is conflict its resolved by 
+            ordering those by author_fname.
         
 #### LIMIT 
     
@@ -184,7 +187,8 @@ My MySQL journey!
     
  #### GROUP BY
     
-    SELECT * FROM table GROUP BY colname; // Doesn't give any useful info, each row is a super row with only preview displayed.
+    SELECT * FROM table GROUP BY colname; // Doesn't give any useful info,
+    each row is a super row with only preview displayed.
     
     SELECT colname, COUNT(*) FROM table GROUP BY colname;
     
@@ -196,7 +200,8 @@ My MySQL journey!
     
    *SIDENOTE: Potential problem*
    
-            SELECT MAX(pages), title FROM books; // ERRR doesn't give right title which has maximum number of pages.
+            SELECT MAX(pages), title FROM books; 
+            // ERRR doesn't give right title which has maximum number of pages.
             
             SOLUTION:
                 
@@ -223,12 +228,14 @@ My MySQL journey!
 
 #### CHAR and VARCHAR
     
-    CHAR - Takes up fixed length (fixed number of bytes), if given input is less than the specified length it pads the input with spaces, if input length is more than it truncate to the specified length.
+    CHAR - Takes up fixed length (fixed number of bytes), if given input is less than the specified length 
+    it pads the input with spaces, if input length is more than it truncate to the specified length.
     You can specify length anywhere between 0-255.
     
     SIDENOTE: When retrieved to display data padding is removed.
     
-    VARCHAR - No of bytes occupied depends on user input but it does truncate when input length exceeds the specified length.
+    VARCHAR - No of bytes occupied depends on user input but it does truncate when input length exceeds 
+    the specified length.
     
     CHAR are faster than VARCHAR.
     
@@ -399,7 +406,8 @@ My MySQL journey!
     
  SIDENOTE: CAST
          
-         When using BETWEEN operator to compare two dates its better to use CAST operator before. To cast them to same type before doing any comparison.
+         When using BETWEEN operator to compare two dates its better to use CAST operator before. 
+         To cast them to same type before doing any comparison.
          
          syntax: 
             CAST ("1970-01-01" AS DATETIME);
@@ -495,10 +503,12 @@ My MySQL journey!
         1 row in a table matching to a multiple row in other table.
         
         EX 1: Book and reviews
-            Take Harry potter Chamber of secrets for example can have mutiple reviews (many) and all those reviews are for that 1 book (1);
+            Take Harry potter Chamber of secrets for example can have mutiple reviews (many) and all 
+            those reviews are for that 1 book (1);
             
         EX 2: Customer and orders
-            Take your myntra account for example, you can order multiple items (many) but all those items are related to you.
+            Take your myntra account for example, you can order multiple items (many) but all those 
+            items are related to you.
      
  
  ##### Foreign key
@@ -539,14 +549,16 @@ My MySQL journey!
    
    ##### LEFT JOIN
         
-        Returns data of left table irrespective of the match or not not the right table. Columns of right table for non-matched row is filled with NULL's.
+        Returns data of left table irrespective of the match or not not the right table. 
+        Columns of right table for non-matched row is filled with NULL's.
         
         SELECT * FROM customers
         LEFT JOIN orders
             ON customers.id = orders.customer_id;
             
             
-       Example illustrating joined tables are regular tables on which you can perform all the basic operations like aggregate function and other thing we learnt:
+       Example illustrating joined tables are regular tables on which you can perform all the 
+       basic operations like aggregate function and other thing we learnt:
             
             SELECT first_name, last_name,
                 IFNULL(SUM(amount), 0) AS total_spent
