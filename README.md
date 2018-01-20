@@ -604,7 +604,19 @@ My MySQL journey!
         JOIN reviewers
             ON reviewers.id = reviews.reviewer_id
         ORDER BY series_id;
-  
+
+##### Triggers
+    
+    DELIMITER $$
+    
+        CREATE TRIGGER trigger_name
+            trigger_time trigger_event ON table FOR EACH ROW
+            BEGIN
+            END;
+    
+    $$
+    DELIMITER ;
+    
         
  #### Extras 
  
