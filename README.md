@@ -1,6 +1,7 @@
 # MySqlForMyself
 My MySQL journey!
 
+All my code: https://ide.cs50.io/naveentejas/naveen
 
  ### Basic
  
@@ -629,6 +630,28 @@ My MySQL journey!
     $$
     DELIMITER ;
     
+    
+    ex: Don't allow self following
+    
+    DELIMITER $$
+    
+    CREATE TRIGGER cannot_follow_self
+        BEFORE INSERT ON follows FOR EACH ROW
+        BEGIN
+            IF NEW.follower_id = NEW.followee_id
+            THEN 
+                SIGNAL SQLSTATE "45000"
+                    SET MESSAGE_TEXT = "Cannot follow yourself"
+            ELSE IF;
+        END;
+     
+     $$
+     DELIMITER ;
+     
+     
+     NEW: represents the new row of insert we are talking about.
+     SIGNAL SQLSTATE = "45000" : represents the user defined error.
+     SET MESSAGE_TEXT: is to set the error message to be displayed to user.
         
  #### Extras 
  
