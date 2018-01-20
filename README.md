@@ -651,7 +651,9 @@ All my code: https://ide.cs50.io/naveentejas/naveen
      
      
    NEW: represents the new row of insert we are talking about.
+   
    SIGNAL SQLSTATE = "45000" : represents the user defined error.
+   
    SET MESSAGE_TEXT: is to set the error message to be displayed to user.
         
  #### Extras 
