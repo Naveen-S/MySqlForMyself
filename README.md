@@ -579,9 +579,10 @@ All my code: https://ide.cs50.io/naveentejas/naveen
      
  ##### CASCADE
         
-        Ok imagine you want to delete a customer from the customer table then what happens to all his orders?
-        By the mysql doesn't let to delete the customer in that case. So how to get around this predicament,
-        we want the all the orders of the customer to be deleted in case we delete of a customer.
+        Ok imagine you want to delete a customer from the customer table then what happens to 
+        all his orders? By the mysql doesn't let to delete the customer in that case. So how to 
+        get around this predicament, we want the all the orders of the customer to be deleted in 
+        case we delete of a customer.
         To achieve this we use something called cascade.
         
             CREATE TABLE orders(
@@ -631,7 +632,7 @@ All my code: https://ide.cs50.io/naveentejas/naveen
     DELIMITER ;
     
     
-    ex: Don't allow self following
+   ex: Don't allow self following
     
     DELIMITER $$
     
@@ -649,9 +650,9 @@ All my code: https://ide.cs50.io/naveentejas/naveen
      DELIMITER ;
      
      
-     NEW: represents the new row of insert we are talking about.
-     SIGNAL SQLSTATE = "45000" : represents the user defined error.
-     SET MESSAGE_TEXT: is to set the error message to be displayed to user.
+   NEW: represents the new row of insert we are talking about.
+   SIGNAL SQLSTATE = "45000" : represents the user defined error.
+   SET MESSAGE_TEXT: is to set the error message to be displayed to user.
         
  #### Extras 
  
