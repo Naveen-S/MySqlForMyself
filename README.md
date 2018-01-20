@@ -642,7 +642,7 @@ All my code: https://ide.cs50.io/naveentejas/naveen
             IF NEW.follower_id = NEW.followee_id
             THEN 
                 SIGNAL SQLSTATE "45000"
-                    SET MESSAGE_TEXT = "Cannot follow yourself"
+                    SET MESSAGE_TEXT = "Cannot follow yourself";
             END IF;
         END;
      
